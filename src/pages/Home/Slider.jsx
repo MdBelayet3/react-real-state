@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Slider = () => {
     return (
-        <div className="flex">
+        <div className="flex my-10">
             <button className="btn btn-secondary">Latest</button>
             <Marquee pauseOnHover={true} speed={100} gradient={true}>
                 <Link className="mr-6 text-xl">Discover the perfect place to call home with our curated selection of properties....</Link>

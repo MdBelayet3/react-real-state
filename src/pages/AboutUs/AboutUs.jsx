@@ -1,12 +1,13 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import Navbar from "../Shared/Navbar/Navbar";
-import Footer from "../Shared/Footer/Footer";
 
 const AboutUs = () => {
     return (
         <div>
+            <Helmet>
+                <title>BelayetVista Homes | About Us</title>
+            </Helmet>
             <div className=" max-w-sm md:max-w-7xl mx-auto">
-                <Navbar></Navbar>
                 <div className="md:max-w-3xl mx-auto">
                     <h1 className="text-center text-2xl md:text-5xl underline mt-5 mb-10">About Us</h1>
                     <div className="space-y-5">
@@ -30,7 +31,6 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <Footer></Footer>
         </div>
     );
 };

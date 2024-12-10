@@ -1,15 +1,17 @@
-import Footer from "../Shared/Footer/Footer";
-import Navbar from "../Shared/Navbar/Navbar";
+import { Helmet } from "react-helmet";
+import Banner from "./Banner";
 import Slider from "./Slider";
 
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>BelayetVista Homes | Home</title>
+            </Helmet>
             <div className=" max-w-sm md:max-w-7xl mx-auto">
-                <Navbar></Navbar>
                 <Slider></Slider>
+                <Banner></Banner>
             </div>
-            <Footer></Footer>
         </div>
     );
 };
