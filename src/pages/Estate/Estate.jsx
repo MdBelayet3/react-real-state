@@ -10,7 +10,7 @@ const Estate = ({ estate }) => {
                 <h2 className="flex-grow text-xl">{estate?.estate_title}</h2>
                 <h3 className="text-xl text-[#131313B3]">{estate?.price}</h3>
                 <h4>{estate?.status}</h4>
-                <Link><button className='btn btn-secondary'>View Property</button></Link>
+                <Link to={`/estate/${estate.id}`}><button className='btn btn-secondary'>View Property</button></Link>
             </div>
 
         </div>

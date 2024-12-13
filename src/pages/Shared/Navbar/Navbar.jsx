@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><NavLink to='/profile'>Update Profile</NavLink></li>
     </>
     return (
-        <div className=" max-w-sm md:max-w-7xl mx-auto navbar bg-base-100">
+        <div className="fixed top-0 z-50 max-w-sm md:max-w-7xl mx-auto navbar bg-blue-500 text-white rounded-2xl">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +30,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box text-black z-[1] mt-3 w-52 p-2 shadow">
                         {nabLink}
                     </ul>
                 </div>
