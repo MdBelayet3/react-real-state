@@ -5,7 +5,7 @@ const Slider = () => {
     return (
         <div className="flex my-10">
             <button className="btn btn-secondary">Latest</button>
-            <Marquee pauseOnHover={true} speed={100} gradient={true}>
+            <Marquee pauseOnHover={true} speed={100}>
                 <Link className="mr-6 text-xl">Discover the perfect place to call home with our curated selection of properties....</Link>
                 <Link className="mr-3 text-xl">Explore stunning homes designed for modern living and timeless elegance.....</Link>
                 <Link className="mr-3 text-xl">Whether you are buying, selling, or renting, we’re here to guide you every step of the way.....</Link>

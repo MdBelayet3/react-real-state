@@ -7,9 +7,9 @@ const Estate = ({ estate }) => {
         <div>
             <div className='flex flex-wrap flex-col rounded-2xl bg-[#F3F3F3] p-8 space-y-5'>
                 <img className=' rounded-2xl h-[250px]' src={estate?.image} alt="" />
-                <h2 className="flex-grow text-xl">{estate?.estate_title}</h2>
+                <h2 className="flex-grow text-xl text-black">{estate?.estate_title}</h2>
                 <h3 className="text-xl text-[#131313B3]">{estate?.price}</h3>
-                <h4>{estate?.status}</h4>
+                <h4 className='text-black'>{estate?.status}</h4>
                 <Link to={`/estate/${estate.id}`}><button className='btn btn-secondary'>View Property</button></Link>
             </div>
 

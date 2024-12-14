@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutUs = () => {
     return (
         <div>
-            <div className=" max-w-sm md:max-w-7xl mx-auto">
+            <div className=" max-w-sm md:max-w-7xl mx-auto md:p-10 p-3 bg-[#F3F3F3] text-black rounded-2xl">
                 <div className="md:max-w-3xl mx-auto">
                     <h1 className="text-center text-2xl md:text-5xl underline mt-5 mb-10">About Us</h1>
                     <div className="space-y-5">

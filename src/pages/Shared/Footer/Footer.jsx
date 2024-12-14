@@ -3,7 +3,7 @@ import icon from '../../../assets/download.png'
 
 const Footer = () => {
     return (
-        <footer className="mt-16 footer bg-black text-white p-10">
+        <footer className="mt-16 footer bg-[#A730E5] text-white p-10">
             <aside>
                 <img className='h-16 w-16' src={icon} alt="" />
                 <p>

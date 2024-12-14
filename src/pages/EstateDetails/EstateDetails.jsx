@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { MdLocationPin } from "react-icons/md";
 import { IoPricetags } from "react-icons/io5";
@@ -21,7 +21,7 @@ const EstateDetails = () => {
     console.log(aEstate);
 
     return (
-        <div className="border max-w-4xl mx-auto space-y-5 my-10 p-10 bg-[#1313130D] rounded-3xl">
+        <div className="border max-w-4xl mx-auto space-y-5 my-10 p-10 bg-[#181024] rounded-3xl">
             <img className="rounded-2xl md:h-[500px] w-full text-center" src={aEstate?.image} alt="" />
             <h1 className="font-bold text-xl md:text-3xl">{aEstate?.estate_title}</h1>
             <p className="text-gray-500 md:text-xl md:leading-8 "><span className="font-extrabold">Description :</span> {aEstate?.description}</p>
@@ -38,7 +38,7 @@ const EstateDetails = () => {
                 <h1><span className="text-lg font-extrabold">Facilities : </span><ul className="ml-20">{aEstate?.facilities.map((facility, idx) => <li className="text-lg list-disc" key={idx}>{facility}</li>)}</ul></h1>
             </div>
             <div className="flex justify-center">
-                <button className="btn btn-secondary">{aEstate?.status === 'sale' ? 'Bye Now' : "Rent Now"}</button>
+                <Link to="/payment/method"><button className="btn btn-secondary">{aEstate?.status === 'sale' ? 'Bye Now' : "Rent Now"}</button></Link>
             </div>
         </div>
     );
