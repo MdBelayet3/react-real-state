@@ -7,6 +7,8 @@ import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import FAQ from "../pages/EstateDetails/FAQ/FAQ";
 import Payment from "../pages/Payment/Payment";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 const Router = () => {
     return (
@@ -18,6 +20,8 @@ const Router = () => {
                 <Route path="/faq" element={<FAQ></FAQ>} ></Route>
                 <Route path="/payment/method" element={<Payment></Payment>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>
+                <Route path="/register" element={<Register></Register>}></Route>
+                <Route path="profile" element={<UpdateProfile></UpdateProfile>}></Route>
                 {/* error element */}
                 <Route path="*" element={<ErrorPage></ErrorPage>}></Route>
             </Route>
