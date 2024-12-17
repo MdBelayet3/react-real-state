@@ -9,6 +9,7 @@ import Payment from "../pages/Payment/Payment";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import PrivetRouter from "./PrivetRouter";
 
 const Router = () => {
     return (
@@ -16,7 +17,7 @@ const Router = () => {
             <Route path="/" element={<Root></Root>}>
                 <Route path="/" element={<Home></Home>} ></Route>
                 <Route path="/about" element={<AboutUs></AboutUs>} ></Route>
-                <Route path="/estate/:id" element={<EstateDetails></EstateDetails>}></Route>
+                <Route path="/estate/:id" element={<PrivetRouter><EstateDetails></EstateDetails></PrivetRouter>}></Route>
                 <Route path="/faq" element={<FAQ></FAQ>} ></Route>
                 <Route path="/payment/method" element={<Payment></Payment>}></Route>
                 <Route path="/login" element={<Login></Login>}></Route>

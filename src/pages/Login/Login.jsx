@@ -1,12 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { FaRegEye, FaEyeSlash } from "react-icons/fa";
+import { FaRegEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../provider/AuthContext";
 
 const Login = () => {
+    const navigate = useNavigate();
+
     // get context value using useContext
-    const {googleSignIn} = useContext(AuthContext);
+    const {googleSignIn, githubSignIn, signIn} = useContext(AuthContext);
     
     //useState hook
     const [isPasswordShow, setIsPasswordShow] = useState(false);
@@ -20,12 +22,28 @@ const Login = () => {
         .catch(error => console.error(error))
     }
 
+    // handleGoogleSignInBtn function for google authentication
+    const handleGithubSignInBtn = () =>{
+        console.log('btn clicked');
+        githubSignIn()
+        .then(result => console.log(result.user))
+        .catch(error => console.error(error))
+    }
+
     // handleLoginBtn function for email and password authentication
     const handleLoginBtn = e =>{
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email,password);
+
+        // signin with email and password
+        signIn(email,password)
+        .then(result => {
+            console.log(result)
+            navigate('/');
+        })
+        .catch(error => console.error(error))
     }
     return (
         <div className="mx-auto text-black card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -59,6 +77,7 @@ const Login = () => {
                 </div>
             </form>
             <button onClick={handleGoogleSignInBtn} className=""><h1 className="flex hover:text-2xl ml-10 mb-5 text-blue-500 items-center gap-1 text-xl">Login With <FcGoogle></FcGoogle></h1></button>
+            <button onClick={handleGithubSignInBtn} className=""><h1 className="flex hover:text-2xl ml-10 mb-5 text-blue-500 items-center gap-1 text-xl">Login With <FaGithub></FaGithub></h1></button>
             <p className="ml-10 mb-10 text-xl">Are You New? Please <Link to="/register" className="btn btn-secondary">Register</Link></p>
         </div>
     );

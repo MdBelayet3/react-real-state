@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import { AuthContext } from './AuthContext';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, GithubAuthProvider, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import auth from '../firebase/firebase';
+import { useEffect, useState } from 'react';
 
 const AuthProvider = ({children}) => {
+    // 
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // create user
     const createUser = (email,password) =>{
@@ -21,11 +25,36 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth,googleProvider);
     }
 
+    // GitHub signIn
+    const githubProvider = new GithubAuthProvider();
+    const githubSignIn = () =>{
+        return signInWithPopup(auth, githubProvider);
+    }
+
+    // onAuthStateChanged
+    useEffect(() =>{
+       const unSubscribe = onAuthStateChanged(auth, currentUser =>{
+            console.log('inside the onAuthStateChanged ',currentUser);
+            setUser(currentUser);
+        })
+        return () =>{
+            unSubscribe();
+        }
+    },[])
+
+    // logout function
+    const logout = () =>{
+        return signOut(auth);
+    }
+
     // AuthCOntext value
     const authInfo = {
         createUser,
         signIn,
         googleSignIn,
+        githubSignIn,
+        user,
+        logout,
     }
     return (
         <AuthContext.Provider value={authInfo}>

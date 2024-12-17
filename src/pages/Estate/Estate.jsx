@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Estate = ({ estate }) => {
-    console.log(estate)
+    // console.log(estate)
     return (
         <div>
             <div className='flex flex-wrap flex-col rounded-2xl bg-[#F3F3F3] p-8 space-y-5'>
