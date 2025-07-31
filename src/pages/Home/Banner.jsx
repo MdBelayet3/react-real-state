@@ -52,7 +52,6 @@ const Banner = () => {
                 </div>
             </div>
         </div>
-        <h2> This is banner section</h2>
     );
 };
 
