@@ -23,7 +23,7 @@ const EstateDetails = () => {
     return (
         <div className="border max-w-4xl mx-auto space-y-5 my-10 p-10 bg-[#181024] rounded-3xl">
             <img className="rounded-2xl md:h-[500px] w-full text-center" src={aEstate?.image} alt="" />
-            <h1 className="font-bold text-xl md:text-3xl">{aEstate?.estate_title}</h1>
+            <h2 className="font-bold text-xl md:text-3xl">{aEstate?.estate_title}</h2>
             <p className="text-gray-500 md:text-xl md:leading-8 "><span className="font-extrabold">Description :</span> {aEstate?.description}</p>
             <div className="md:flex md:justify-between ">
                 <h3 className="flex items-center gap-2"><LuSquareArrowOutUpRight></LuSquareArrowOutUpRight><span className="text-lg font-extrabold">Area : </span>{aEstate?.area}</h3>
