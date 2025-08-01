@@ -35,7 +35,7 @@ const EstateDetails = () => {
                 <h3 className="flex items-center gap-2"><SiSellfy></SiSellfy><span className="text-lg font-extrabold">Status : </span>{aEstate?.status}</h3>
             </div>
             <div>
-                <h1><span className="text-lg font-extrabold">Facilities : </span><ul className="ml-20">{aEstate?.facilities.map((facility, idx) => <li className="text-lg list-disc" key={idx}>{facility}</li>)}</ul></h1>
+                <h1><span className="text-lg font-extrabold">Facilities : </span><ul className="ml-16">{aEstate?.facilities.map((facility, idx) => <li className="text-lg list-disc" key={idx}>{facility}</li>)}</ul></h1>
             </div>
             <div className="flex justify-center">
                 <Link to="/payment/method"><button className="btn btn-secondary">{aEstate?.status === 'sale' ? 'Bye Now' : "Rent Now"}</button></Link>
